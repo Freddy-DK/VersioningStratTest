@@ -361,7 +361,7 @@ jobs:
 
   MODUSDeliver:
     needs: [ Initialization, Build ]
-    if: (!cancelled()) && (needs.Build.result == 'success' || needs.Build.result == 'skipped') && needs.Initialization.outputs.deliveryTargetsJson != '[]'
+    if: (!cancelled()) && (needs.Build.result == 'success' || needs.Build.result == 'skipped')
     runs-on: [ ubuntu-latest ]
     steps:
       - name: Download artifacts
