@@ -1,6 +1,12 @@
 # Init pipeline
 
 Write-Host "--------------------------------------------"
+# Get Repo root
+
+Write-Host "--------------------------------------------"
+$settings = Get-Variable -Name "settings" -scope 1
+$settings | ConvertTo-Json | Out-Host
+
 Write-Host $appBuild
 Write-Host $appRevision
 
