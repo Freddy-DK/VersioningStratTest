@@ -4,8 +4,16 @@ Write-Host "--------------------------------------------"
 # Get Repo root
 
 Write-Host "--------------------------------------------"
-$settings = Get-Variable -Name "settings" -scope 2
-$settings | ConvertTo-Json | Out-Host
+1..5 | ForEach-Object {
+    Write-Host "Iteration $_"
+    try {
+        $settings = Get-Variable -Name "settings" -scope $_
+        $settings | ConvertTo-Json | Out-Host
+    }
+    catch {
+        Write-Host "Variable 'settings' not found in scope $_"
+    }
+}
 
 Write-Host $appBuild
 Write-Host $appRevision
