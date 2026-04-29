@@ -192,6 +192,9 @@ jobs:
           $needsContextPath = Join-Path $ENV:RUNNER_TEMP 'needsContext.json'
           [System.IO.File]::WriteAllText($needsContextPath, $nc.Trim())
           Add-Content -Encoding UTF8 -Path $env:GITHUB_ENV -Value "NeedsContext=$needsContextPath"
+          Write-Host $needsContextPath
+          Write-Host $ENV:GITHUB_ENV
+         
 
       - name: Build
         uses: microsoft/AL-Go-Actions/RunPipeline@v9.0
