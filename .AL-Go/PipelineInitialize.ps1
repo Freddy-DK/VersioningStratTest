@@ -4,7 +4,7 @@ Write-Host "--------------------------------------------"
 # Get Repo root
 
 Write-Host "--------------------------------------------"
-$settings = Get-Variable -Name "settings" -scope 1
+$settings = Get-Variable -Name "settings" -scope 2
 $settings | ConvertTo-Json | Out-Host
 
 Write-Host $appBuild
