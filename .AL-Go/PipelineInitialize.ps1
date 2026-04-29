@@ -1,6 +1,9 @@
 # Init pipeline
 
 Write-Host "--------------------------------------------"
+
+Get-Content '/home/runner/work/_temp/needsContext.json' | Out-Host
+
 $repoRoot = git -C $PSScriptRoot rev-parse --show-toplevel
 Write-Host "Repo root: $repoRoot"
 
