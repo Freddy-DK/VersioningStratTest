@@ -1,18 +1,10 @@
 # Init pipeline
 
 Write-Host "--------------------------------------------"
-# Get Repo root
+$repoRoot = git -C $PSScriptRoot rev-parse --show-toplevel
+Write-Host "Repo root: $repoRoot"
 
-Write-Host "--------------------------------------------"
-1..3 | ForEach-Object {
-    Write-Host "Iteration $_"
-    try {
-        Get-Variable -scope $_ | Out-Host
-    }
-    catch {
-        Write-Host "Variable 'settings' not found in scope $_"
-    }
-}
+gh auth status | Out-Host
 
 Write-Host $appBuild
 Write-Host $appRevision
