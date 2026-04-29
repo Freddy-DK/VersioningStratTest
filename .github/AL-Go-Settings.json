@@ -6,7 +6,7 @@
   "CICDPushBranches": [
     "main",
     "releases/*"
-  },
+  ],
   "conditionalSettings": [
     {
       "branches": [
